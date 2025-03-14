@@ -1,11 +1,13 @@
 ﻿using EmployeeManagement.Models;
 using EmployeeManagement.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EmployeeManagement.Controllers
 {
-    [Route("api/[controller]")] // This defines the API route prefix
-    [ApiController] // This tells .NET that it's an API controller
+    [Route("api/[controller]")] 
+    [ApiController]
+    [Authorize] //authorised for all end points.
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployeeService _employeeService;
